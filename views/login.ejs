@@ -1,0 +1,126 @@
+<% layout('./Boilerplate/Layout.ejs') -%>
+<head>
+  <title>Login_ Signup_form</title>
+  <link rel="stylesheet" href="public_css/login_signup.css" />
+</head>
+<body>
+  <div id="main-div" class="main-div">
+    <div class="form-container">
+      <div class="login-form">
+        <form method="post" action="/loginsubmit">
+          <h1 class="head">Login</h1>
+          <label for="login-email">Username </label>
+          <div class="icon">
+            <img
+              src="user.jpg"
+              style="width: 40px; height: 25px; margin-top: 4px" />
+            <input
+              type="email"
+              name="email"
+              class="email"
+              id="login-email"
+              required
+              placeholder="E-Mail" /><br />
+          </div>
+          <label for="login-pass">Password </label>
+          <div class="icon">
+            <img
+              src="images/password.png"
+              style="width: 36px; height: 25px; margin-top: 4px" />
+            <input
+              type="password"
+              name="pass"
+              id="login-pass"
+              class="password"
+              required
+              placeholder="Password" />
+            <img
+              src="./images/eye-close.png"
+              class="eye-icon"
+              alt="eye-close" />
+          </div>
+          <br />
+          <button class="button-gradient" type="submit">LOGIN</button>
+        </form>
+      </div>
+      <div class="signup-form">
+        <form
+          method="post"
+          action="/signupsubmit"
+          onsubmit="return validatePasswords()">
+          <h1 class="head">Sign Up</h1>
+          <label for="signup-email">Username </label>
+          <div class="icon">
+            <img
+              src="./images/user.jpg"
+              style="width: 40px; height: 25px; margin-top: 4px" />
+            <input
+              type="email"
+              name="email"
+              class="email"
+              id="signup-email"
+              required
+              placeholder="E-Mail" /><br />
+          </div>
+          <label for="pass">Password </label>
+          <div class="icon">
+            <img
+              src="./images/password.png"
+              style="width: 36px; height: 25px; margin-top: 4px" />
+            <input
+              type="password"
+              name="pass"
+              id="pass"
+              class="password"
+              required
+              placeholder="Password" />
+            <img
+              src="./images/eye-close.png"
+              class="eye-icon"
+              alt="eye-close" />
+            <br />
+          </div>
+          <label for="conform_pass">Confirm Password </label>
+          <div class="icon">
+            <img
+              src="./images/password.png"
+              style="width: 36px; height: 25px; margin-top: 4px" />
+            <input
+              type="password"
+              name="conform_pass"
+              id="conform_pass"
+              class="password"
+              required
+              placeholder="Password" />
+            <img
+              src="./images/eye-close.png"
+              class="eye-icon"
+              alt="eye-close" />
+            <br />
+          </div>
+          <span id="error-message" class="error-message"></span><br />
+          <button class="button-gradient" type="submit">SIGNUP</button>
+        </form>
+      </div>
+    </div>
+    <div class="matter-div">
+      <div class="signup-div">
+        <div class="matter">
+          <h1>Welcome!</h1>
+          <br />
+          <h3>Create an account to become our family member</h3>
+          <button id="Sign">Sign Up</button>
+        </div>
+      </div>
+      <div class="login-div">
+        <div class="matter">
+          <h1>Welcome back!</h1>
+          <br />
+          <h3>To keep connected with us <br />please login</h3>
+          <button id="login">Log in</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="public_js/login_signup.js"></script>
+</body>
